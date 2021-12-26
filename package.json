@@ -1,0 +1,8 @@
+{
+  "name": "sync-is-life",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
