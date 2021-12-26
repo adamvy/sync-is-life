@@ -78,8 +78,11 @@ worker.postMessage({
   readChannel: writeChannel,
 });
 
+// Currently have to run in a timeout, otherwise the worker never seems to get the CPU
+// So much for "parallelism." The main thread never seem to get preempted from the CPU
+// for the worker thread.
 setTimeout(() => {
   write("hello");
 
   console.log("Worker says", read());
-}, 0);
+}, 1000);
